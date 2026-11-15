@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://cpbfqdt60irf8"]
+
+[ext_resource type="Script" uid="uid://sj4ltabwb8xs" path="res://dialogue_box_girl.gd" id="1_6hfk0"]
+[ext_resource type="Texture2D" uid="uid://bwftamvced1ue" path="res://photos/AshaClosed.png" id="2_yhbnm"]
+[ext_resource type="Script" uid="uid://b6bmhnatwtpds" path="res://portrait.gd" id="3_jl5kb"]
+[ext_resource type="Texture2D" uid="uid://y4o13jpv0tmc" path="res://photos/Girlopened.png" id="3_yhbnm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmbke"]
+bg_color = Color(0.5411765, 0.6039216, 0.35686275, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="DialogueBoxGirl" type="CanvasLayer" unique_id=1633616123]
+script = ExtResource("1_6hfk0")
+mouth_closed = ExtResource("2_yhbnm")
+mouth_open = ExtResource("3_yhbnm")
+message_duration = 2.5
+pause_between = 1.0
+
+[node name="Screen" type="Control" parent="." unique_id=1565883240]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1156.0
+offset_bottom = 658.0
+
+[node name="Box" type="Panel" parent="Screen" unique_id=900156347]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 443.0
+offset_right = 1130.0
+offset_bottom = 623.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dmbke")
+
+[node name="Portrait" type="TextureRect" parent="Screen" unique_id=1645366514]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 391.0
+offset_right = 201.0
+offset_bottom = 610.0
+texture = ExtResource("2_yhbnm")
+expand_mode = 1
+script = ExtResource("3_jl5kb")
+
+[node name="Speaker" type="Label" parent="Screen" unique_id=890318064]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 449.0
+offset_right = 276.0
+offset_bottom = 491.0
+theme_override_font_sizes/font_size = 30
+text = "Asha"
+
+[node name="Message" type="Label" parent="Screen" unique_id=419924829]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 489.0
+offset_right = 1111.0
+offset_bottom = 606.0
+theme_override_font_sizes/font_size = 32

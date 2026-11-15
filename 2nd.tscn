@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dxlvnyy2fsl2u"]
+
+[ext_resource type="Texture2D" uid="uid://cbttjygc8gopu" path="res://photos/door.png" id="1_6csuc"]
+[ext_resource type="Script" uid="uid://bvq74lupqwnys" path="res://2_nd.gd" id="1_4723a"]
+[ext_resource type="PackedScene" uid="uid://bipj0vri5qauo" path="res://player_knock.tscn" id="3_ae8x8"]
+[ext_resource type="PackedScene" uid="uid://cf1arjl8qu8ea" path="res://mysterious_voice.tscn" id="4_00xbf"]
+
+[node name="Node2D" type="Node2D" unique_id=801333474]
+script = ExtResource("1_4723a")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=854236976]
+offset_right = 1165.0
+offset_bottom = 660.0
+color = Color(0.014933054, 0.08648225, 0.043124914, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1690783886]
+offset_left = 34.0
+offset_top = 34.0
+offset_right = 1132.0
+offset_bottom = 624.0
+texture = ExtResource("1_6csuc")
+
+[node name="PlayerKnock" parent="." unique_id=1343909489 instance=ExtResource("3_ae8x8")]
+
+[node name="MysteriousVoice" parent="." unique_id=76941929 instance=ExtResource("4_00xbf")]
+
+[node name="Button" type="Button" parent="." unique_id=252982197]
+offset_left = 444.0
+offset_top = 190.0
+offset_right = 649.0
+offset_bottom = 382.0
+theme_override_font_sizes/font_size = 32
+text = "Knock?"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

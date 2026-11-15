@@ -1,0 +1,149 @@
+[gd_scene format=3 uid="uid://dh4x7wobnl7al"]
+
+[ext_resource type="Script" uid="uid://jcvqm34kaq78" path="res://3_rd.gd" id="1_koroh"]
+[ext_resource type="Texture2D" uid="uid://dbywjl5yiaqg8" path="res://photos/lab.png" id="1_pvvg8"]
+[ext_resource type="Texture2D" uid="uid://bkiwpq63bmmev" path="res://photos/scientist1.png" id="2_d5hbl"]
+[ext_resource type="Script" uid="uid://bwyy6oeivco1m" path="res://scientist.gd" id="3_nbfwu"]
+[ext_resource type="Texture2D" uid="uid://cfbfbntyeag1y" path="res://photos/scientist2.png" id="5_o5h8d"]
+[ext_resource type="Texture2D" uid="uid://c0tucicv3tj2u" path="res://photos/scientist3.png" id="6_84xu1"]
+[ext_resource type="Texture2D" uid="uid://2kgjwqewdypf" path="res://photos/scientist4.png" id="7_tji5v"]
+[ext_resource type="PackedScene" uid="uid://bipj0vri5qauo" path="res://player_knock.tscn" id="8_hl6ha"]
+[ext_resource type="PackedScene" uid="uid://dp6a8b61v51hx" path="res://scientist_speakin.tscn" id="9_5rh4f"]
+[ext_resource type="Texture2D" uid="uid://dtcbio223ll1d" path="res://photos/t1.png" id="10_84xu1"]
+[ext_resource type="Texture2D" uid="uid://dqoy3ljfg2sj2" path="res://photos/chibi.png" id="11_tji5v"]
+[ext_resource type="Texture2D" uid="uid://cbogm8iccjcj8" path="res://photos/green.png" id="12_orb"]
+[ext_resource type="Texture2D" uid="uid://dg53u3sev58qh" path="res://photos/scientist.png" id="13_reveal"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whiteboard"]
+resource_local_to_scene = true
+atlas = ExtResource("10_84xu1")
+region = Rect2(83, 529, 4791, 3101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chibi"]
+atlas = ExtResource("11_tji5v")
+region = Rect2(203, 2315, 2241, 2178)
+
+[node name="3rd" type="Node2D" unique_id=632726647]
+script = ExtResource("1_koroh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1190006550]
+offset_right = 1163.0
+offset_bottom = 656.0
+color = Color(0.1503768, 0.31141546, 0.24391308, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=809694452]
+offset_left = 35.0
+offset_top = 27.0
+offset_right = 1121.0
+offset_bottom = 626.0
+texture = ExtResource("1_pvvg8")
+
+[node name="scientist" type="TextureRect" parent="." unique_id=2019423809]
+offset_left = 281.0
+offset_top = -52.0
+offset_right = 984.0
+offset_bottom = 672.4423
+texture = ExtResource("2_d5hbl")
+expand_mode = 1
+script = ExtResource("3_nbfwu")
+scientist1 = ExtResource("2_d5hbl")
+scientist2 = ExtResource("5_o5h8d")
+scientist3 = ExtResource("6_84xu1")
+scientist4 = ExtResource("7_tji5v")
+
+[node name="PlayerKnock" parent="." unique_id=1343909489 instance=ExtResource("8_hl6ha")]
+layer = 4
+
+[node name="ScientistDialogue" parent="." unique_id=421909088 instance=ExtResource("9_5rh4f")]
+layer = 4
+
+[node name="WhiteboardLesson" type="Control" parent="." unique_id=2058045499]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1156.0
+offset_bottom = 658.0
+mouse_filter = 2
+
+[node name="Whiteboard" type="TextureRect" parent="WhiteboardLesson" unique_id=985337530]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 18.0
+offset_right = 1130.0
+offset_bottom = 423.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_whiteboard")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Chibi" type="TextureRect" parent="WhiteboardLesson" unique_id=642318413]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 160.0
+offset_right = 360.0
+offset_bottom = 423.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_chibi")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DialogueHint" type="CanvasLayer" parent="." unique_id=941017551]
+layer = 5
+
+[node name="Label" type="Label" parent="DialogueHint" unique_id=1677348729]
+visible = false
+offset_left = 800.0
+offset_top = 625.0
+offset_right = 1130.0
+offset_bottom = 647.0
+theme_override_colors/font_color = Color(0.85, 0.9, 0.86, 1)
+theme_override_font_sizes/font_size = 16
+text = "Space / Enter · Continue"
+horizontal_alignment = 2
+
+[node name="RegulatorOverlay" type="CanvasLayer" parent="." unique_id=1852335825]
+layer = 3
+visible = false
+
+[node name="Background" type="ColorRect" parent="RegulatorOverlay" unique_id=576679657]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.012, 0.025, 0.009, 1)
+
+[node name="Orb" type="TextureRect" parent="RegulatorOverlay" unique_id=1982677620]
+offset_top = -20.0
+offset_right = 1156.0
+offset_bottom = 480.0
+mouse_filter = 2
+texture = ExtResource("12_orb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ScientistReveal" type="TextureRect" parent="RegulatorOverlay" unique_id=1339124254]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("13_reveal")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EndingFade" type="CanvasLayer" parent="." unique_id=876935703]
+layer = 100
+
+[node name="Black" type="ColorRect" parent="EndingFade" unique_id=1330177074]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)

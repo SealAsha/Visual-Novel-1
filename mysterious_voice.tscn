@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cf1arjl8qu8ea"]
+
+[ext_resource type="Script" uid="uid://dteoltemnig0m" path="res://mysterious_voice.gd" id="1_3cb8m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmbke"]
+bg_color = Color(0.03708056, 0.10753634, 0.04054223, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.2671595, 0.5387311, 0.26722908, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="MysteriousVoice" type="CanvasLayer" unique_id=76941929]
+script = ExtResource("1_3cb8m")
+
+[node name="Screen" type="Control" parent="." unique_id=1501154201]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1156.0
+offset_bottom = 658.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Box" type="Panel" parent="Screen" unique_id=1063031314]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 443.0
+offset_right = 1130.0
+offset_bottom = 623.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dmbke")
+metadata/_edit_use_anchors_ = true
+
+[node name="Speaker" type="Label" parent="Screen" unique_id=251938856]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 452.0
+offset_right = 130.0
+offset_bottom = 494.0
+theme_override_colors/font_color = Color(0.25997096, 0.5147105, 0.36808875, 1)
+theme_override_font_sizes/font_size = 30
+text = "Mysterious Voice"
+metadata/_edit_use_anchors_ = true
+
+[node name="Message" type="Label" parent="Screen" unique_id=293387066]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 494.0
+offset_right = 1111.0
+offset_bottom = 606.0
+theme_override_font_sizes/font_size = 32
+metadata/_edit_use_anchors_ = true

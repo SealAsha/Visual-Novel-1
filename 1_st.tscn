@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dur55wt206vaw"]
+
+[ext_resource type="Texture2D" uid="uid://b00k5ydtn6i1x" path="res://photos/InsideOfCar.jpg" id="1_lxl2w"]
+[ext_resource type="PackedScene" uid="uid://cpbfqdt60irf8" path="res://dialogue_box_girl.tscn" id="2_25km0"]
+
+[node name="1st" type="Node2D" unique_id=1829396396]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1502306242]
+offset_right = 1160.0
+offset_bottom = 659.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=718073351]
+offset_right = 1168.0
+offset_bottom = 662.0
+texture = ExtResource("1_lxl2w")
+
+[node name="DialogueBoxGirl" parent="." unique_id=1633616123 instance=ExtResource("2_25km0")]

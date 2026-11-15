@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cc2d04qwfywge"]
+
+[ext_resource type="Script" uid="uid://4rcrlyudhbu1" path="res://mainmenu.gd" id="1_3pujl"]
+[ext_resource type="Texture2D" uid="uid://b2pxbf7g0q2cr" path="res://photos/322F81A3-888C-4BA9-97B4-059207EA643E.jpeg" id="2_igs2m"]
+[ext_resource type="Script" uid="uid://d1pijqp8trif4" path="res://texture_rect.gd" id="2_wgsso"]
+
+[node name="mainmenu" type="Node2D" unique_id=904470801]
+script = ExtResource("1_3pujl")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1876434037]
+offset_right = 1151.0
+offset_bottom = 655.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=4710074]
+offset_left = -3.0
+offset_top = -29.0
+offset_right = 973.0
+offset_bottom = 709.0
+texture = ExtResource("2_igs2m")
+expand_mode = 1
+script = ExtResource("2_wgsso")
+float_distance = 8.0
+float_time = 2.0
+
+[node name="button cc" type="Control" parent="." unique_id=846612193]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="exit" type="Button" parent="button cc" unique_id=2113382782]
+layout_mode = 0
+offset_left = 970.0
+offset_top = 322.0
+offset_right = 1152.0
+offset_bottom = 664.0
+text = "Exit
+"
+
+[node name="start2" type="Button" parent="button cc" unique_id=2010793578]
+layout_mode = 0
+offset_left = 971.0
+offset_top = -3.0
+offset_right = 1153.0
+offset_bottom = 321.0
+text = "Start"
+
+[connection signal="pressed" from="button cc/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="button cc/start2" to="." method="_on_start_2_pressed"]

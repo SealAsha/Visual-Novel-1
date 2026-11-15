@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dheg5rb14vvv4"]
+
+[ext_resource type="Texture2D" uid="uid://bicb5o7hrnpt6" path="res://photos/dead.png" id="1_8f3xj"]
+[ext_resource type="PackedScene" uid="uid://d3twojpqg7ndn" path="res://dialogue_box_player.tscn" id="2_unegr"]
+
+[node name="Dead" type="Node2D" unique_id=874714466]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=958242434]
+offset_right = 1155.0
+offset_bottom = 651.0
+texture = ExtResource("1_8f3xj")
+expand_mode = 1
+
+[node name="DialogueBoxPlayer" parent="." unique_id=1341115504 instance=ExtResource("2_unegr")]
